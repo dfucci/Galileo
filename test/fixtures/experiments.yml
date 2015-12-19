@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  status: MyText
+  start_day: 2015-12-19
+  aim: MyText
+
+two:
+  title: MyString
+  status: MyText
+  start_day: 2015-12-19
+  aim: MyText
