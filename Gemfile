@@ -41,6 +41,9 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'byebug'
+  gem 'guard'
+  gem 'guard-rspec', '4.6.0'
+  gem 'guard-rails', require: false
 end
 
 group :test do
