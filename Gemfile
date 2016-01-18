@@ -36,8 +36,17 @@ gem 'react-rails', '~> 1.5.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rspec-rails'
   gem 'pg'
+  gem 'capybara'
+  gem 'factory_girl_rails'
   gem 'byebug'
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 3.0', require: false
+  gem 'database_cleaner', '~> 1.5'
+  gem 'faker'
 end
 
 group :development do
