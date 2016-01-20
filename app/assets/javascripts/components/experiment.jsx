@@ -1,6 +1,6 @@
 this.Experiment = React.createClass({
   render(){
-    let link = `${this.props.experiment.id}`;
+    let link = `experiments/${this.props.experiment.id}`;
     return(
       <div className="panel panel-default">
         <div className="panel-heading">
