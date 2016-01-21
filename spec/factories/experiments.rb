@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryGir.define do
   factory :experiment do
     title     { Faker::Lorem.sentence  }
     status         { Faker::Lorem.word  }
