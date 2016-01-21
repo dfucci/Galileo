@@ -7,8 +7,7 @@ this.Notes = React.createClass({
 
   render(){
     return(
-      <div className='notes'>
-        <h2 className='title'> Note </h2>
+      <div className='notes panel-group' id='accordion' role='tablist' aria-multiselectable='true'>
         {this.renderNotes()}
       </div>
     )

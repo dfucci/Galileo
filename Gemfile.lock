@@ -123,6 +123,8 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    momentjs-rails (2.11.0)
+      railties (>= 3.1)
     multi_json (1.11.2)
     nenv (0.2.0)
     nokogiri (1.6.7.1)
@@ -257,6 +259,7 @@ DEPENDENCIES
   guard-rspec (= 4.6.0)
   jbuilder (~> 2.0)
   jquery-rails
+  momentjs-rails
   pg
   rails (= 4.2.5)
   rails_12factor
