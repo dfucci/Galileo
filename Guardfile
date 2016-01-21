@@ -49,6 +49,7 @@ guard :rspec, cmd: "bundle exec rspec" do
     [
       rspec.spec.("routing/#{m[1]}_routing"),
       rspec.spec.("controllers/#{m[1]}_controller"),
+      rspec.spec.("models/#{m[1]}_spec"),
       rspec.spec.("acceptance/#{m[1]}")
     ]
   end
