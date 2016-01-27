@@ -29,6 +29,8 @@
 .navbar .navbar-header a.navbar-brand:hover .fa-lightbulb-o, 
 .navbar .navbar-header a.navbar-brand:active .fa-lightbulb-o {
   color: #e9ae5a;
+  text-shadow: 0 0 10px lighten(#e9ae5a, 10%);
+  transition: all 0.15s ease 0s;
 }
 
 .page-header {
