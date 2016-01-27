@@ -16,7 +16,7 @@ this.Experiments = React.createClass({
   render(){
     return(
       <div className='experiments'>
-        <h2 className='title'>
+        <h2 className='page-header'>
           Experiments
         </h2>
         {this.renderExperiments()}

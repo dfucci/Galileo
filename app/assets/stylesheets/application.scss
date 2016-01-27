@@ -15,3 +15,22 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Kanit);
+
+.navbar-brand {
+  font-size: 2.5rem;
+  margin-top: -.3rem;
+}
+
+.navbar-title {
+  font-family: 'Kanit', sans-serif;
+}
+
+.navbar .navbar-header a.navbar-brand:hover .fa-lightbulb-o, 
+.navbar .navbar-header a.navbar-brand:active .fa-lightbulb-o {
+  color: #e9ae5a;
+}
+
+.page-header {
+  margin-top: 0;
+}

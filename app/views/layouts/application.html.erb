@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Galileo</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -10,7 +12,10 @@
     <nav class="navbar navbar-default" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand change-font" href="/">Galileo</a>
+          <a class="navbar-brand" href="/">
+            <span class="fa fa-lightbulb-o"></span>
+            <span class="navbar-title">Galileo</span>
+          </a>
         </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
