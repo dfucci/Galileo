@@ -14,12 +14,12 @@ this.ExperimentDetail = React.createClass({
 
         <div className="container">
           <a className="pull-right" href=""><span className="glyphicon glyphicon-plus"></span> Add collaborators</a>
-          <h1 className="page-header">{this.props.experiment.title} <small><span className="label label-default">{this.props.experiment.status}</span></small></h1>
+          <h1 className="page-header">{this.props.experiment.title}</h1>
           <div className="row">
-          <div className="col-md-3">
-            <Phases />
+          <div className="col-md-2">
+            <Phases status={this.props.experiment.status}/>
           </div>
-          <div className="col-md-9">
+          <div className="col-md-10">
             <Notes handleEditNotes={this.updateNotes} notes={this.props.experiment.notes} />
           </div>
           </div>
