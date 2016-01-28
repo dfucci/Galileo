@@ -15,6 +15,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 @import url(https://fonts.googleapis.com/css?family=Kanit);
 
 .navbar-brand {
@@ -26,7 +27,7 @@
   font-family: 'Kanit', sans-serif;
 }
 
-.navbar .navbar-header a.navbar-brand:hover .fa-lightbulb-o, 
+.navbar .navbar-header a.navbar-brand:hover .fa-lightbulb-o,
 .navbar .navbar-header a.navbar-brand:active .fa-lightbulb-o {
   color: #e9ae5a;
   text-shadow: 0 0 10px #e9ae5a;
