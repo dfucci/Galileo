@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'home#index'
+  get 'home/index'
+
+  devise_for :users
   resources :experiments do
     resources :notes
   end
