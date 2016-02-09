@@ -1,1 +1,87 @@
-<%= link_to "Signup", new_user_registration_path %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Galileo</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+      <div class="container topnav">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            <span class="fa fa-lightbulb-o"></span>
+            <span class="navbar-title">Galileo</span>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#services">Blog</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <div class="intro-header">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="intro-message">
+              <h3>
+                Galileo is a platform that helps geographically distribuited teams of researchers to perform software engineering experiments
+              </h3>
+              <hr class="intro-divider">
+              <h4>
+                <i>Measure what is measurable, and make measurable what is not so.</i> - Galileo Galilei
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.container -->
+    </div>
+    <div class="content-section-a">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 class="section-heading">Start an experiment selecting from several protocols</h2>
+            <p class="lead"><i class="fa fa-flask fa-2x fa-pull-left"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="section-heading">Invite other researchers to collaborate on your experiment</h2>
+            <p class="lead"><i class="fa fa-globe fa-2x fa-pull-left"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="col-lg-4">
+            <h2 class="section-heading">Generate reports for all the steps of your experiment</h2>
+            <p class="lead"><i class="fa fa-file-text fa-2x fa-pull-left"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+      </div>
+      <!-- /.container -->
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <p class="copyright text-muted pull-right small">Made with <i class="fa fa-heart"></i> in Oulu, Finland by <a href="http://twitter.com/dfucci_">dfucci <i class="fa fa-twitter"></i></a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div> <!-- /container -->
+  </body>
+</html>
+
