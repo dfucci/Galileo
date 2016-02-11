@@ -23,11 +23,18 @@
         <li><a href="#">Help</a></li>
         <li><a href="#">About</a></li>
       </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="" >dfucci</a></li>
-      <li><a href="" data-toggle="tooltip" data-placement="bottom" title="Your settings"><span class="glyphicon glyphicon-cog"></span></a></li>
-      <li><a href="" data-toggle="tooltip" data-placement="bottom" title="Log out"><span class="glyphicon glyphicon-log-out"></span></a></li>
-    </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li><a href="" ><%= current_user.email %></a></li>
+          <li><a href="" data-toggle="tooltip" data-placement="bottom" title="Your settings"><span class="glyphicon glyphicon-cog"></span></a></li>
+          <li>
+            <%= link_to(raw('<span class="glyphicon glyphicon-log-out"></span>'), destroy_user_session_path, :method => :delete) %>
+          </li>
+        <% else %>
+          <li><%= link_to(raw('Login'), new_user_session_path) %></li>
+          <li><%= link_to(raw('Sign up'), new_user_registration_path) %></li>
+        <% end %>
+      </ul>
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container">
