@@ -4,4 +4,6 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+  # Mayor.sreate(name: 'Emanuel', city: cities.first)
+experiment = Experiment.create({title:"The effects of usability on web framework acceptance", aim: "Understanding what use thing of webframework", status: "planning", start_day: Date.today})
+experiment.notes.create({content: "just a note"})
