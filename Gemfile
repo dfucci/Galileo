@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 gem 'rails_12factor', group: :production
-gem 'pg', group: :production
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'momentjs-rails'
@@ -34,12 +33,11 @@ gem 'react-rails', '~> 1.5.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'pg'
 gem 'devise'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails'
-  gem 'pg'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'byebug'
