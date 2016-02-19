@@ -4,6 +4,7 @@
  *    * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  *     */
 
+//= depend_on_asset "bg.jpeg"
 body,
 html {
   width: 100%;
@@ -39,7 +40,7 @@ h6 {
   padding-bottom: 0px;
   text-align: center;
   color: #f8f8f8;
-  background: url(bg.jpeg) no-repeat center center;
+  background: url('<%= asset_path("bg.jpeg") %> ') no-repeat center center;
   background-size: cover;
 
 }
