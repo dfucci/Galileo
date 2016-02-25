@@ -1,6 +1,7 @@
 class ExperimentsController < ApplicationController
+  before_action :authenticate_user!
   def index
-    @experiments = Experiment.all
+    @experiments = current_user.experiments.all
   end
 
   def show
