@@ -1,9 +1,9 @@
 require 'rails_helper'
-include Warden::Test::Helpers
+include Devise::TestHelpers
 RSpec.describe ExperimentsController, type: :controller do
   before(:each) do
     @user = FactoryGirl.create(:user)
-    login_as @user, :scope => :user
+    sign_in @user
   end
   describe 'GET #show' do
     it 'assigns the requested experiment to @experiment variable' do
