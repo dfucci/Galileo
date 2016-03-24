@@ -22,7 +22,7 @@ this.ExperimentDetail = React.createClass({
             {(()=>{
               switch (this.props.experiment.status) {
                 case "planning" : return <ExperimentPlanning />
-                case "scoping" : return <ExperimentScoping />
+                case "scoping" : return <ExperimentScoping experiment={this.props.experiment}/>
                 case "executing" : return <ExperimentExecuting />
                 case "analyzing" : return  <ExperimentAnalyzing />
                 case "reporting" : return <ExperimentReporting />
@@ -64,7 +64,13 @@ this.ExperimentExecuting = React.createClass({
 this.ExperimentScoping = React.createClass({
   render(){
     return(
-      <div>Experiment scoping according to Wohlin</div>
+      <form>
+        <b>Analyze</b> <input type="text" name="object" placeholder="object of the study"/><br/>
+        <b>for the purpose of </b> <input type="text" name="purpose" placeholder="purpose"/><br/>
+        <b>with respect to their </b> <input type="text" name="focus" placeholder="quality focus"/><br/>
+        <b>from the point of view of </b> <input type="text" name="perspective" placeholder="perspective"/><br/>
+        <b>in the context of </b> <input type="text" name="context" placeholder="context"/><br/>
+      </form>
     )
   }
 });
