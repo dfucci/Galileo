@@ -70,6 +70,7 @@ this.ExperimentScoping = React.createClass({
         <b>with respect to their </b> <input type="text" name="focus" placeholder="quality focus"/><br/>
         <b>from the point of view of </b> <input type="text" name="perspective" placeholder="perspective"/><br/>
         <b>in the context of </b> <input type="text" name="context" placeholder="context"/><br/>
+        <button type="submit">Save</button>
       </form>
     )
   }
