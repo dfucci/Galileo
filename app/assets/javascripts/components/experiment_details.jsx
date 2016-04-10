@@ -62,15 +62,34 @@ this.ExperimentExecuting = React.createClass({
 });
 
 this.ExperimentScoping = React.createClass({
+  save(e){
+    e.preventDefault();
+    let data = {
+      object: ReactDOM.findDOMNode(this.refs.object).value,
+      purpose: ReactDOM.findDOMNode(this.refs.purpose).value,
+      focus: ReactDOM.findDOMNode(this.refs.focus).value,
+      perspective: ReactDOM.findDOMNode(this.refs.perspective).value,
+      context: ReactDOM.findDOMNode(this.refs.context).value
+    };
+    let url = `/experiments/${this.props.experiment.id}/scoping`
+    $.ajax({
+      method: 'PUT',
+      url: url,
+      dataType: 'JSON',
+      data: {payload: data},
+      success: (data) => {
+      }
+    });
+  },
   render(){
     return(
       <form>
-        <b>Analyze</b> <input type="text" name="object" placeholder="object of the study"/><br/>
-        <b>for the purpose of </b> <input type="text" name="purpose" placeholder="purpose"/><br/>
-        <b>with respect to their </b> <input type="text" name="focus" placeholder="quality focus"/><br/>
-        <b>from the point of view of </b> <input type="text" name="perspective" placeholder="perspective"/><br/>
-        <b>in the context of </b> <input type="text" name="context" placeholder="context"/><br/>
-        <button type="submit">Save</button>
+        <b>Analyze</b> <input type="text" name="object" ref="object" placeholder="object of the study"/><br/>
+        <b>for the purpose of </b> <input type="text" name="purpose" ref="purpose" placeholder="purpose"/><br/>
+        <b>with respect to their </b> <input type="text" name="focus" ref="focus" placeholder="quality focus"/><br/>
+        <b>from the point of view of </b> <input type="text" name="perspective" ref="perspective" placeholder="perspective"/><br/>
+        <b>in the context of </b> <input type="text" name="context" ref="context" placeholder="context"/><br/>
+        <button type="submit" onClick={this.save}>Save</button>
       </form>
     )
   }

@@ -13,7 +13,6 @@ class NotesController < ApplicationController
   end
 
   def update
-    print params
     @note = @experiment.notes.find(params[:id])
     if @note.update(note_params)
       render json: @note
