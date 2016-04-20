@@ -65,7 +65,7 @@ this.ExperimentScoping = React.createClass({
   save(e){
     e.preventDefault();
     let data = {
-      object: ReactDOM.findDOMNode(this.refs.object).value,
+     analyze: ReactDOM.findDOMNode(this.refs.object).value,
       purpose: ReactDOM.findDOMNode(this.refs.purpose).value,
       focus: ReactDOM.findDOMNode(this.refs.focus).value,
       perspective: ReactDOM.findDOMNode(this.refs.perspective).value,

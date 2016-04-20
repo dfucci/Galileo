@@ -40,6 +40,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'pry-rails'
+  # gem 'pry-debugger', '~> 0.2.3'
   gem 'byebug'
   gem 'guard'
   gem 'guard-rspec', '4.6.0'
