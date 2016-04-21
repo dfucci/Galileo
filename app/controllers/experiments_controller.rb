@@ -5,7 +5,7 @@ class ExperimentsController < ApplicationController
   end
 
   def show
-    @experiment = Experiment.find(params[:id]).as_json(include: :notes)
+    @experiment = Experiment.find(params[:id]).as_json(include: [ :notes, :scope ])
   end
 
   def scope
