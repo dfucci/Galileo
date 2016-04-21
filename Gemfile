@@ -45,7 +45,6 @@ group :development, :test do
   gem 'byebug'
   gem 'guard'
   gem 'guard-rspec', '4.6.0'
-  gem 'faker'
   gem 'guard-rails', require: false
 end
 
