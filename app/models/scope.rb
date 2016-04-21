@@ -1,5 +1,4 @@
 class Scope < ActiveRecord::Base
   has_many :notes
-  # belongs_to :experiment
-  has_one :experiment
+  belongs_to :experiment
 end
