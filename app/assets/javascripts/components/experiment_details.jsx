@@ -10,10 +10,7 @@ this.ExperimentDetail = React.createClass({
   },
 
   updateScope(scope, data){
-    console.log(scope);
-    console.log(data);
-    let experiment = React.addons.update(this.props.experiment, {scope: {$set: scope.scope}});
-    console.log(experiment);
+    let experiment = React.addons.update(this.props.experiment, {scope: {$set: data}});
     this.replaceProps({
        experiment: experiment
    })
@@ -76,7 +73,7 @@ this.ExperimentScoping = React.createClass({
   },
   save(e){
     e.preventDefault();
-    let data = {
+    let scope = {
       analyze: ReactDOM.findDOMNode(this.refs.object).value,
       purpose: ReactDOM.findDOMNode(this.refs.purpose).value,
       focus: ReactDOM.findDOMNode(this.refs.focus).value,
@@ -88,10 +85,10 @@ this.ExperimentScoping = React.createClass({
       method: 'PUT',
       url: url,
       dataType: 'JSON',
-      data: {payload: data},
+      data: {payload: scope},
       success: (data) => {
         this.setState({editing: false});
-        this.props.handleEditScope(this.props.experiment, data);
+        this.props.handleEditScope(this.props.experiment, scope);
       }
     });
   },
