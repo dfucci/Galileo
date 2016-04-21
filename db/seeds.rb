@@ -5,5 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
   # Mayor.sreate(name: 'Emanuel', city: cities.first)
-experiment = Experiment.create({title:"The effects of usability on web framework acceptance", aim: "Understanding what use thing of webframework", status: "planning", start_day: Date.today})
+user = User.new
+user.email = 'test@example.com'
+user.password = '12345678'
+user.password_confirmation = '12345678'
+user.save!
+experiment = Experiment.create({title:"The effects of usability on web framework acceptance", aim: "Understanding what use thing of webframework", status: "scoping", start_day: Date.today})
 experiment.notes.create({content: "just a note"})
+user.experiments << experiment
