@@ -1,0 +1,3 @@
+[ ] updating a scope causes a new row to be added in the table
+[ ] stile the form for updating experiment scope
+[ ] when an experiment is created it automatically has a scope attached to it

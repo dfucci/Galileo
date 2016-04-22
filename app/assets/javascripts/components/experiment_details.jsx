@@ -9,12 +9,7 @@ this.ExperimentDetail = React.createClass({
     });
   },
 
-  updateScope(scope, data){
-    let experiment = React.addons.update(this.props.experiment, {scope: {$set: data}});
-    this.replaceProps({
-       experiment: experiment
-   })
-  },
+
   render(){
     return (
       <div className="container">
@@ -28,7 +23,7 @@ this.ExperimentDetail = React.createClass({
             {(()=>{
               switch (this.props.experiment.status) {
                 case "planning" : return <ExperimentPlanning />
-                case "scoping" : return <ExperimentScoping handleEditScope={this.updateScope} experiment={this.props.experiment}/>
+                case "scoping" : return <ExperimentScoping experiment={this.props.experiment.id} scope={this.props.experiment.scope}/>
                 case "executing" : return <ExperimentExecuting />
                 case "analyzing" : return  <ExperimentAnalyzing />
                 case "reporting" : return <ExperimentReporting />
@@ -69,8 +64,16 @@ this.ExperimentExecuting = React.createClass({
 
 this.ExperimentScoping = React.createClass({
   getInitialState(){
-    return {editing: false}
+    return {editing: false,
+      scope: {
+        analyze: this.props.scope.analyze,
+        purpose: this.props.scope.purpose,
+        focus: this.props.scope.focus,
+        perspective: this.props.scope.perspective,
+        context: this.props.scope.context,
+      }}
   },
+
   save(e){
     e.preventDefault();
     let scope = {
@@ -80,52 +83,54 @@ this.ExperimentScoping = React.createClass({
       perspective: ReactDOM.findDOMNode(this.refs.perspective).value,
       context: ReactDOM.findDOMNode(this.refs.context).value
     };
-    let url = `/experiments/${this.props.experiment.id}/scoping`
+    let url = `/experiments/${this.props.experiment}/scoping`
     $.ajax({
       method: 'PUT',
       url: url,
       dataType: 'JSON',
       data: {payload: scope},
       success: (data) => {
-        this.setState({editing: false});
-        this.props.handleEditScope(this.props.experiment, scope);
+        this.setState({editing: false, scope: scope});
       }
     });
   },
+
   handleChange(e){
     e.preventDefault();
     this.setState({
       editing: !this.state.editing
     })
   },
-  render(){
-    if(this.state.editing) return this.scopeEditing()
-      else return this.scopeNormal()
-  },
+
   scopeNormal(){
     return(
       <div>
-        <p>Analyze {this.props.experiment.scope.analyze}</p>
-        <p>for the purpose of {this.props.experiment.scope.purpose}</p>
-        <p>with respect to their {this.props.experiment.scope.focus}</p>
-        <p>from the point of view of  {this.props.experiment.scope.perspective}</p>
-        <p>in the context of  {this.props.experiment.scope.context}</p>
+        <p>Analyze {this.state.scope.analyze}</p>
+        <p>for the purpose of {this.state.scope.purpose}</p>
+        <p>with respect to their {this.state.scope.focus}</p>
+        <p>from the point of view of  {this.state.scope.perspective}</p>
+        <p>in the context of  {this.state.scope.context}</p>
         <button onClick={this.handleChange}>Edit</button>
       </div>
     )
   },
+
   scopeEditing(){
     return(
       <form>
-        <b>Analyze</b> <input type="text" name="object" ref="object" placeholder={this.props.experiment.scope.analyze ? this.props.experiment.scope.analyze : "object of the study"}/><br/>
-        <b>for the purpose of </b> <input type="text" name="purpose" ref="purpose" placeholder={this.props.experiment.scope.purpose ? this.props.experiment.scope.purpose : "purpose"}/><br/>
-        <b>with respect to their </b> <input type="text" name="focus" ref="focus" placeholder={this.props.experiment.scope.focus ? this.props.experiment.scope.focus : "focus"}/><br/>
-        <b>from the point of view of </b> <input type="text" name="perspective" ref="perspective" placeholder={this.props.experiment.scope.perspective ? this.props.experiment.scope.perspective : "perspective"}/><br/>
-        <b>in the context of </b> <input type="text" name="context" ref="context" placeholder={this.props.experiment.scope.context ? this.props.experiment.scope.context : "context"}/><br/>
+        <b>Analyze</b> <input type="text" name="object" ref="object" placeholder={this.state.scope.analyze ? this.props.scope.analyze : "object of the study"}/><br/>
+        <b>for the purpose of </b> <input type="text" name="purpose" ref="purpose" placeholder={this.state.scope.purpose ? this.props.scope.purpose : "purpose"}/><br/>
+        <b>with respect to their </b> <input type="text" name="focus" ref="focus" placeholder={this.state.scope.focus ? this.props.scope.focus : "focus"}/><br/>
+        <b>from the point of view of </b> <input type="text" name="perspective" ref="perspective" placeholder={this.state.scope.perspective ? this.props.scope.perspective : "perspective"}/><br/>
+        <b>in the context of </b> <input type="text" name="context" ref="context" placeholder={this.state.scope.context ? this.props.scope.context : "context"}/><br/>
         <button type="submit" onClick={this.save}>Save</button>
       </form>
     )
+  },
 
+  render(){
+    if(this.state.editing) return this.scopeEditing()
+      else return this.scopeNormal()
   }
 });
 
