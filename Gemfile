@@ -37,7 +37,7 @@ gem 'pg'
 gem 'devise', '>= 4.8.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'rspec-rails', '>= 5.1.0'
+  gem 'rspec-rails', '>= 5.1.1'
   gem 'capybara', '>= 3.36.0'
   gem 'factory_girl_rails', '>= 4.9.0'
   gem 'byebug'
