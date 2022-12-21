@@ -7,7 +7,7 @@ gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.4.0'
 gem 'momentjs-rails', '>= 2.29.1.1'
-gem 'sass-rails', '~> 5.1', '>= 5.1.0'
+gem 'sass-rails', '~> 6.0', '>= 6.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 2.7.2'
 # Use CoffeeScript for .coffee assets and views
