@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.2.6.2'
+gem 'rails', '6.1.7.3'
 gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.4.0'
@@ -37,7 +37,7 @@ gem 'pg'
 gem 'devise', '>= 4.8.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'rspec-rails', '>= 5.1.0'
+  gem 'rspec-rails', '>= 5.1.1'
   gem 'capybara', '>= 3.36.0'
   gem 'factory_girl_rails', '>= 4.9.0'
   gem 'byebug'
@@ -47,7 +47,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.0', require: false
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.3', require: false
   gem 'database_cleaner', '~> 1.5'
   gem 'faker', '>= 1.6.1'
 end
