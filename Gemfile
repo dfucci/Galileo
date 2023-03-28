@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.2.6.2'
+gem 'rails', '6.1.7.3'
 gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.4.0'
