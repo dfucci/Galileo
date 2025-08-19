@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.2.6.2'
+gem 'rails', '7.1.5.2'
 gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.4.0'
@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.11', '>= 2.11.5'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 1.0.0', group: :doc
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
-gem 'react-rails', '~> 1.5.0'
+gem 'react-rails', '~> 1.6.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
